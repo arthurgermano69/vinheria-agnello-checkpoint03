@@ -1,4 +1,4 @@
-# vinheria-agnello-checkpoint03
+# Vinheria Agnello Checkpoint03
 
 ## Aluno
 

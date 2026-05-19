@@ -36,14 +36,20 @@ function adicionarVinho(nome, tipo, safra, estoque) {
 function listarVinhos() {
   console.log("Lista completa de vinhos:");
 
+  let listaTexto = "Lista completa de vinhos:\n\n";
+
   vinhos.forEach(function (vinho) {
-    console.log(
+    const linha =
       "Nome: " + vinho.nome +
       " | Tipo: " + vinho.tipo +
       " | Safra: " + vinho.safra +
-      " | Estoque: " + vinho.estoque
-    );
+      " | Estoque: " + vinho.estoque;
+
+    console.log(linha);
+    listaTexto += linha + "\n";
   });
+
+  alert(listaTexto);
 }
 
 // Mostra os vinhos com estoque abaixo de 5 usando filter
@@ -54,23 +60,32 @@ function mostrarVinhosEstoqueBaixo() {
 
   console.log("Vinhos com estoque abaixo de 5:");
 
+  let listaTexto = "Vinhos com estoque abaixo de 5:\n\n";
+
   vinhosEstoqueBaixo.forEach(function (vinho) {
-    console.log(
+    const linha =
       "Nome: " + vinho.nome +
       " | Tipo: " + vinho.tipo +
       " | Safra: " + vinho.safra +
-      " | Estoque: " + vinho.estoque
-    );
+      " | Estoque: " + vinho.estoque;
+
+    console.log(linha);
+    listaTexto += linha + "\n";
   });
+
+  alert(listaTexto);
 }
 
-// Calcula o estoque total usando reduce
+// Calcula e retorna o estoque total usando reduce
 function calcularEstoqueTotal() {
   const estoqueTotal = vinhos.reduce(function (total, vinho) {
     return total + vinho.estoque;
   }, 0);
 
   console.log("Estoque total da vinicola: " + estoqueTotal);
+  alert("Estoque total da vinicola: " + estoqueTotal);
+
+  return estoqueTotal;
 }
 
 // Exibe os nomes dos vinhos em caixa alta usando map
@@ -81,9 +96,14 @@ function exibirNomesCaixaAlta() {
 
   console.log("Nomes dos vinhos em caixa alta:");
 
+  let listaTexto = "Nomes dos vinhos em caixa alta:\n\n";
+
   nomesEmCaixaAlta.forEach(function (nome) {
     console.log(nome);
+    listaTexto += nome + "\n";
   });
+
+  alert(listaTexto);
 }
 
 // Execucao das funcoes solicitadas
