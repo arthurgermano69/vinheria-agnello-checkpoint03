@@ -159,6 +159,6 @@ footer {
 
 .sobre:hover,
 .resultado:hover {
-  transform: translateY(-6px);
+  transform: translateY(-3px);
   box-shadow: 0 12px 24px rgba(107, 26, 26, 0.12);
 }
