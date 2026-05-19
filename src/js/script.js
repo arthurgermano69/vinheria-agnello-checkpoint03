@@ -20,6 +20,14 @@ const vinhos = [
   }
 ];
 
+// Exibe o resultado na tela dentro da main
+function exibirNaTela(texto) {
+  const div = document.createElement("div");
+  div.className = "resultado";
+  div.innerText = texto;
+  document.querySelector("main").appendChild(div);
+}
+
 // Adiciona um novo vinho no array
 function adicionarVinho(nome, tipo, safra, estoque) {
   const novoVinho = {
@@ -49,7 +57,7 @@ function listarVinhos() {
     listaTexto += linha + "\n";
   });
 
-  alert(listaTexto);
+  exibirNaTela(listaTexto);
 }
 
 // Mostra os vinhos com estoque abaixo de 5 usando filter
@@ -73,7 +81,7 @@ function mostrarVinhosEstoqueBaixo() {
     listaTexto += linha + "\n";
   });
 
-  alert(listaTexto);
+  exibirNaTela(listaTexto);
 }
 
 // Calcula e retorna o estoque total usando reduce
@@ -83,7 +91,7 @@ function calcularEstoqueTotal() {
   }, 0);
 
   console.log("Estoque total da vinicola: " + estoqueTotal);
-  alert("Estoque total da vinicola: " + estoqueTotal);
+  exibirNaTela("Estoque total da vinicola: " + estoqueTotal);
 
   return estoqueTotal;
 }
@@ -103,7 +111,7 @@ function exibirNomesCaixaAlta() {
     listaTexto += nome + "\n";
   });
 
-  alert(listaTexto);
+  exibirNaTela(listaTexto);
 }
 
 // Execucao das funcoes solicitadas
