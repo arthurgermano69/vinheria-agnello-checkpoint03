@@ -134,9 +134,20 @@ footer {
   background-color: #ffffff;
   border-top: 3px solid #c9a84c;
   padding: 36px 40px;
-  white-space: pre;
-  font-family: 'EB Garamond', serif;
+}
+
+.resultado-titulo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #6b1a1a;
+  margin-bottom: 14px;
+  letter-spacing: 1px;
+}
+
+.resultado-conteudo {
   font-size: 16px;
   line-height: 1.9;
   color: #4a3030;
+  white-space: pre;
 }

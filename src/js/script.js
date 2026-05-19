@@ -20,11 +20,21 @@ const vinhos = [
   }
 ];
 
-// Exibe o resultado na tela dentro da main
-function exibirNaTela(texto) {
+// Exibe o resultado na tela dentro da main com titulo
+function exibirNaTela(titulo, texto) {
   const div = document.createElement("div");
   div.className = "resultado";
-  div.innerText = texto;
+
+  const h2 = document.createElement("h2");
+  h2.className = "resultado-titulo";
+  h2.innerText = titulo;
+
+  const p = document.createElement("p");
+  p.className = "resultado-conteudo";
+  p.innerText = texto;
+
+  div.appendChild(h2);
+  div.appendChild(p);
   document.querySelector("main").appendChild(div);
 }
 
@@ -44,7 +54,7 @@ function adicionarVinho(nome, tipo, safra, estoque) {
 function listarVinhos() {
   console.log("Lista completa de vinhos:");
 
-  let listaTexto = "Lista completa de vinhos:\n\n";
+  let listaTexto = "";
 
   vinhos.forEach(function (vinho) {
     const linha =
@@ -57,7 +67,7 @@ function listarVinhos() {
     listaTexto += linha + "\n";
   });
 
-  exibirNaTela(listaTexto);
+  exibirNaTela("Lista Completa de Vinhos: ", listaTexto);
 }
 
 // Mostra os vinhos com estoque abaixo de 5 usando filter
@@ -66,9 +76,9 @@ function mostrarVinhosEstoqueBaixo() {
     return vinho.estoque < 5;
   });
 
-  console.log("Vinhos com estoque abaixo de 5:");
+  console.log("Vinhos com estoque abaixo:");
 
-  let listaTexto = "Vinhos com estoque abaixo de 5:\n\n";
+  let listaTexto = "";
 
   vinhosEstoqueBaixo.forEach(function (vinho) {
     const linha =
@@ -81,7 +91,7 @@ function mostrarVinhosEstoqueBaixo() {
     listaTexto += linha + "\n";
   });
 
-  exibirNaTela(listaTexto);
+  exibirNaTela("Vinhos com Estoque Abaixo:", listaTexto);
 }
 
 // Calcula e retorna o estoque total usando reduce
@@ -91,7 +101,7 @@ function calcularEstoqueTotal() {
   }, 0);
 
   console.log("Estoque total da vinicola: " + estoqueTotal);
-  exibirNaTela("Estoque total da vinicola: " + estoqueTotal);
+  exibirNaTela("Estoque Total da Vinícola: ", "" + estoqueTotal + " unidades");
 
   return estoqueTotal;
 }
@@ -104,14 +114,14 @@ function exibirNomesCaixaAlta() {
 
   console.log("Nomes dos vinhos em caixa alta:");
 
-  let listaTexto = "Nomes dos vinhos em caixa alta:\n\n";
+  let listaTexto = "";
 
   nomesEmCaixaAlta.forEach(function (nome) {
     console.log(nome);
     listaTexto += nome + "\n";
   });
 
-  exibirNaTela(listaTexto);
+  exibirNaTela("Nomes dos Vinhos em Caixa Alta: ", listaTexto);
 }
 
 // Execucao das funcoes solicitadas
